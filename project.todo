@@ -1,0 +1,66 @@
+ctrl + enter : 할 일 목록 생성
+alt + d : 할 일 완료
+
+
+✔ To-do List 테스트 @done(25-08-12 23:58)
+✔ Log 모듈에서 어느 위치에서 호출되었는지 만들기. @done(25-08-12 23:58)
+✔ DISCORD_client 모듈화하기. (https://gemini.google.com/app/39fddbef197f3101 참고) @done(25-08-12 23:58)
+✔ youtube_test 참고해서 모듈화된 DISCORD_client에 적용하기. @done(25-08-12 23:59)
+
+✔ music cog 분석 후 개선 (그냥 단순히 gpt 코드 복붙해둔 상태) + log설정 @done(25-08-17 23:59)
+✔ 대화기능 개발. (generate_voice) + log설정 @done(25-08-17 23:59)
+✔ ai_chat_with_tts log설정 하기 + 개선 (일단 통화방 들어와있는게 전제임. 만든게) @done(25-08-17 23:59)
+
+✔ 대화기능 디스코드에 적용. @done(25-08-12 23:59)
+✔ 디스코드 대화 개선 json으로 기록 @done(25-08-12 23:59)
+✔ 디스코드 cog 대대적으로 개선 (LAS 개발 후) @done(25-08-17 18:35)
+
+✔ 파일 경로들 .env로 해서 정리하기 @done(25-08-12 23:59)
+
+✔ LAS input 로그 만들기 (jsonl) @done(25-08-12 23:59)
+✔ LAS 로그 시스템 만들기 - jsonl로 하자. @done(25-08-12 23:59)
+✔ 기억 시스템 만들기 @done(25-08-12 23:59)
+✔ 프롬프트 엔지니어링 - summary도 1대1의 기록만 인식하는 문제가 있음 - vtuber 시로 참고하는게 좋을듯. @done(25-08-12 23:59)
+✔ LAS summary @done(25-08-12 23:59)
+✔ LAS judge @done(25-08-12 23:59)
+☐ 인물 judge와 인물에 대한 데이터 저장
+
+- 프롬프트 엔지니어링 관련
+☐ judge 기능 향상 : 일단 일반 대화 판단 말고 제공하는 기능이 없으니 이거 추가하면서 개선
+✔ role_prompt 개선 : 현재 너무 딱딱하고, 자비스같은 사람같은 느낌이 아애 없음. 너무 정중하게 해서 생긴 문제라고 생각함. @done(25-08-22 04:18)
+☐ reference 개선 : 일단 말투reference를 만들긴 했으나 분량이 적음.
+✔ role_prompt에 $로 들어가는 부분도 추가하기 @done(25-08-24 18:29)
+✔ Memory 기능 추가 @done(25-08-21 21:13)
+
+☐ LAS의 대화 로그 두 방식 이용 - About_LAS/Talking.jsonl이랑 디스코드 jsonl로 해서 기본적으로는 Talking쓰다가 디코에서 대화할때는 디코꺼도 대화 자료 가져와서 하는거임.
+✔ openai api와 discord 병목현상 해결 ->  응답을 별도 스레드나 비동기 작업으로 분리하기 (참고:https://chatgpt.com/share/689391a9-1634-800f-ac9d-80a8a50666f8) @done(25-08-17 03:31)
+
+✔ kivy 복합 활용 분석 @done(25-08-17 03:31)
+✔ kivy 복합 활용 설정 @done(25-08-17 03:31)
+
+☐ GUI_LAS 로그 로직 짜면서 개선 : 기본적인 작동은 하는데 로그 기능을 안넣음.(장기적인 로그)
+☐ o4모델 써서 논의 관련은 다른 모델로 응답 길게하기
+☐ 사용자에 대한 응답 분리 (대화방이나 대화에 참여해있는 사용자에 따라서 처리를 따로 하도록 설계해야할듯)
+☐ to-do list 기능 만들기
+
+
+- New Project
+☐ RAG와 CRUD 모델을 통합하여 개선 (https://gemini.google.com/app/7b0b38fc0b29baaa?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_source=google&utm_medium=paid-media&utm_medium=cpc&utm_campaign=bkws&utm_campaign=2024koKR_gemfeb&pt=9008&mt=8&ct=p-growth-sem-bkws&gclsrc=aw.ds&gad_source=1&gad_campaignid=20437330476&gbraid=0AAAAApk5BhmbXmGKADiqU4sM5Dv1Cc-Ct&gclid=Cj0KCQjwzOvEBhDVARIsADHfJJT_jRJFbXB-uzBmCqgluq8tEfvlzGFfwu4eymJYRbgDGemPqz2lCRcaAgNwEALw_wcB)
+☐ '모드 전환 아키텍처(Mode-Switching Architecture)' 또는 '적응형 AI 파이프라인(Adaptive AI Pipeline)'으로 개선
+☐ 랭체인 관련 자료 학습 (https://www.youtube.com/watch?v=EWKbZFqiCsE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+☐ 알 수 없는 버그 파악 (의문의 로그가 메세지가 있었음) => 로그 지워버려서 파악 불가 "미제 사건"
+☐ 알 수 없는 토큰 사용 - 임베딩용으로 토큰이 쓰였음.

@@ -1,0 +1,73 @@
+# las_gui.kv
+
+<LAS_GUI>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    Label:
+        id: status_label
+        text: '봇 상태: 오프라인'
+        size_hint_y: None
+        height: 30
+        font_size: '16sp'
+        color: 0.8, 0.8, 0.8, 1
+        font_name: 'NotoSansKR-VariableFont_wght.ttf'
+
+    ScrollView:
+        size_hint: 1, 1
+        do_scroll_x: False
+        bar_width: 10
+        # ✅ 아래 한 줄을 추가하여 스크롤바와 콘텐츠를 모두 사용해 스크롤할 수 있게 합니다.
+        scroll_type: ['bars', 'content']
+
+        Label:
+            id: log_label
+            text: '로그가 여기에 표시됩니다.'
+            size_hint_y: None
+            height: self.texture_size[1]
+            text_size: self.width, None
+            padding: 10, 10
+            halign: 'left'
+            valign: 'top'
+            markup: True
+            font_name: 'NotoSansKR-VariableFont_wght.ttf'
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        spacing: 10
+
+        TextInput:
+            id: prompt_input
+            hint_text: 'AI에게 보낼 메시지를 입력하세요...'
+            multiline: False
+            on_text_validate: app.ask_openai_from_gui()
+            font_name: 'NotoSansKR-VariableFont_wght.ttf'
+            # ✅ 아래 한 줄을 추가하여 텍스트를 수직 중앙에 고정합니다.
+            padding: [10, (self.height - self.line_height) / 2]
+
+        Button:
+            text: '전송'
+            size_hint_x: None
+            width: 100
+            on_press: app.ask_openai_from_gui()
+            font_name: 'NotoSansKR-VariableFont_wght.ttf'
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        spacing: 10
+
+        Button:
+            text: '봇 시작'
+            on_press: app.start_bot_thread()
+            font_name: 'NotoSansKR-VariableFont_wght.ttf'
+        Button:
+            text: '봇 종료'
+            on_press: app.stop_bot_thread()
+            font_name: 'NotoSansKR-VariableFont_wght.ttf'
+        Button:
+            text: '앱 종료'
+            on_press: app.exit_app()
+            font_name: 'NotoSansKR-VariableFont_wght.ttf'

@@ -1,0 +1,31 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and Data
+# (개인정보나 대화 기록이 Git에 올라가지 않도록 예외 처리합니다)
+*.log
+DATABASE/
+*.jsonl
+
+# Kivy / GUI related
+*.kv.compiled
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Media files
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.m4a
