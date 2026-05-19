@@ -47,5 +47,4 @@ Project/
  L.A.S. v2 이전에 '메모리 시스템' 개선을 v1에 임시로 구현하여 검증하는 작업도 수행하였습니다. 이는 Issue Tracking에서 확인 가능합니다.
 
  다음은 해당 작업의 결과 보고서입니다.
- 
- https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/edit?usp=sharing 
+ - https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/edit?usp=sharing 
