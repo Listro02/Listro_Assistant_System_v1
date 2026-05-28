@@ -29,3 +29,10 @@ Thumbs.db
 *.ogg
 *.flac
 *.m4a
+
+# Temporary files and memos
+*.huff
+*.tmp
+*.bak
+~*
+
