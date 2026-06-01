@@ -1,0 +1,12 @@
+[
+    {"id": "T_01", "name": "AI 및 RAG 아키텍처 연구", "description": "AI 모델, 임베딩, 검색 증강 생성, 프롬프트 엔지니어링"},
+    {"id": "T_02", "name": "게임 개발", "description": "Unity, Dash Game, 타일맵, 충돌 처리"},
+    {"id": "T_03", "name": "컴퓨터 아키텍처/하드웨어", "description": "Verilog, CPU 설계, 디지털 회로"},
+    {"id": "T_04", "name": "소프트웨어 인프라", "description": "Java, 자료구조, 알고리즘, 소프트웨어 엔지니어링"},
+    {"id": "T_05", "name": "창작/세계관", "description": "소설, 세계관 설계, 캐릭터 디자인"},
+    {"id": "T_06", "name": "학업", "description": "수업, 과제, 시험, 학교 관련"},
+    {"id": "T_07", "name": "커리어/행정", "description": "취업, 인턴, 행정 절차, 이력서"},
+    {"id": "T_08", "name": "게임 분석", "description": "게임 플레이, 리뷰, 전략 분석"},
+    {"id": "T_09", "name": "일상/취미/서브컬처", "description": "일반 대화, 취미, 서브컬처"},
+    {"id": "T_10", "name": "사용자 프로필", "description": "사용자(Listro)의 개인 신상 정보, 성향, 취향, 스케줄 등 개인적 사실"}
+]

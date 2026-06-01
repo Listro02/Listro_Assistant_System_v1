@@ -114,7 +114,29 @@ class XMemoryLAS:
         self.AI = OpenAIClient()           # core/utils/openai_client.py (복사본)
         self.role_prompt = ...             # 기존 role_prompt.txt 로드
         self.judge_prompt = ...            # 기존 judge_prompt.txt 로드
-        self.reference = ...               # 기존 reference.jsonl 로드
+        self.reference = ...    def seed(self, dry_run: bool = False) -> SeedReport:
+        """
+        1. LAS_memory.jsonl + Listro_memory.jsonl 파싱
+        2. 각 {"facts": [...]} 행에서 사실 문자열 추출
+           - Listro_memory.jsonl의 사실 -> parent_theme_id = "T_10" (사용자 프로필)로 강제 지정
+           - LAS_memory.jsonl의 사실 중 정적 말투/호칭 규칙(신체 없음, 주인님 호칭 등) -> 중복 방지를 위해 시딩 제외
+           - LAS_memory.jsonl의 기타 사실 -> 임베딩 생성 후 find_themes()로 자동 테마 매핑 (또는 T_09 지정)
+        3. 중복 제거 및 임베딩 생성 (배치 API 1회)
+        4. vector_store.add_facts() 호출
+        """
+        
+        # ── 변환 매핑 ──
+        # | 소스 | 대상 (L2 fact) | 변환 규칙 |
+        # | :--- | :--- | :--- |
+        # | Listro_memory.jsonl | parent_theme_id | "T_10" (사용자 프로필) 강제 매핑 |
+        # | LAS_memory.jsonl (정적 페르소나) | (제외) | role_prompt.txt에 직접 반영되어 있으므로 제외 |
+        # | LAS_memory.jsonl (기타 시스템 정보) | parent_theme_id | find_themes(embedding) 결과 중 최상위 테마 (또는 "T_09") |
+        # | facts[i] (문자열) | text | 그대로 |
+        # | — | id | F_seed_{auto_increment} |
+        # | — | status | "active" |
+        # | — | source_episode_id | "SEED_MIGRATION" |
+        # | — | created_at | 마이그레이션 실행 시각 |
+        
         self.place = "Listro의 개발실"
         self.scenario = "..."
         
