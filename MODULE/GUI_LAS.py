@@ -188,6 +188,14 @@ class LAS_GUI_App(App):
             if self.root: self.root.ids.status_label.text = text
         Clock.schedule_once(update_ui)
 
+    def toggle_xmemory(self, instance, is_active):
+        if self.LAS_Handler:
+            self.LAS_Handler.set_xmemory_mode(is_active)
+            status = "켜짐" if is_active else "꺼짐"
+            self.add_log_message(f"[설정] xMemory 모드가 {status} 상태로 변경되었습니다.")
+        else:
+            self.add_log_message("[오류] LAS_Handler가 초기화되지 않았습니다.")
+
     # LAS_GUI_App 클래스 내의 add_log_message 함수
     def add_log_message(self, log_text):
         def update_ui(dt):

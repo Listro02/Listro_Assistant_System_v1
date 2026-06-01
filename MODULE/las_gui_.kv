@@ -5,14 +5,37 @@
     padding: 10
     spacing: 10
 
-    Label:
-        id: status_label
-        text: '봇 상태: 오프라인'
+    BoxLayout:
+        orientation: 'horizontal'
         size_hint_y: None
-        height: 30
-        font_size: '16sp'
-        color: 0.8, 0.8, 0.8, 1
-        font_name: 'NotoSansKR-VariableFont_wght.ttf'
+        height: 40
+        spacing: 10
+
+        Label:
+            id: status_label
+            text: '봇 상태: 오프라인'
+            size_hint_x: 0.7
+            font_size: '16sp'
+            color: 0.8, 0.8, 0.8, 1
+            font_name: 'NotoSansKR-VariableFont_wght.ttf'
+            halign: 'left'
+            valign: 'middle'
+            text_size: self.size
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_x: 0.3
+            spacing: 5
+            Label:
+                text: 'xMemory'
+                font_name: 'NotoSansKR-VariableFont_wght.ttf'
+                font_size: '14sp'
+                halign: 'right'
+                valign: 'middle'
+                text_size: self.size
+            Switch:
+                id: xmemory_switch
+                on_active: app.toggle_xmemory(self, self.active)
 
     ScrollView:
         size_hint: 1, 1
