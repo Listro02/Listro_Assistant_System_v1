@@ -1,6 +1,6 @@
 import argparse
 from pathlib import Path
-from core.config import config
+from core.config import XMemoryConfig
 from core.database.sqlite_store import RawMessageStore
 from core.database.vector_store import VectorStore
 from core.embedding import EmbeddingClient
@@ -21,11 +21,13 @@ def main():
     parser.add_argument("--max-turns", type=int, default=None, help="Step 3에서 벌크 통합할 최근 N턴의 수 (전체 통합은 생략)")
     args = parser.parse_args()
     
+    config = XMemoryConfig()
+    
     run_log.sys_log.info("마이그레이션 컴포넌트 초기화 중...")
-    sqlite_store = RawMessageStore(config)
-    vector_store = VectorStore(config)
-    embedding_client = EmbeddingClient(config)
-    openai_client = OpenAIClient(config)
+    sqlite_store = RawMessageStore(config.sqlite_path)
+    vector_store = VectorStore(config.vector_store_dir)
+    openai_client = OpenAIClient()
+    embedding_client = EmbeddingClient(openai_client, config.embedding_model)
     pipeline = ConsolidationPipeline(config, sqlite_store, vector_store, embedding_client, openai_client)
     
     # Project/DATABASE 경로 매핑
@@ -49,7 +51,7 @@ def main():
     if args.step is None or args.step == 3:
         run_log.sys_log.info("=== Step 3: 벌크 LLM 통합 (맥락/L1 생성) ===")
         bulk_runner = BulkConsolidator(pipeline, sqlite_store)
-        bulk_runner.run(chunk_size=config.chunk_size, overlap=config.overlap, max_turns=args.max_turns, dry_run=args.dry_run)
+        bulk_runner.run(chunk_size=config.window_size, overlap=config.overlap_size, max_turns=args.max_turns, dry_run=args.dry_run)
 
     run_log.sys_log.info("=== 마이그레이션 프로세스 완료 ===")
 
