@@ -101,10 +101,11 @@ class XMemoryLAS:
         self.sqlite_store = RawMessageStore(self.config.sqlite_path)
         self.vector_store = VectorStore(self.config.vector_store_dir)
         
+        self.embedding = EmbeddingClient(self.AI, model=self.config.embedding_model)
+        
         # Load themes on startup
         self._init_themes()
         
-        self.embedding = EmbeddingClient(self.AI, model=self.config.embedding_model)
         self.consolidator = ConsolidationPipeline(self.config, self.sqlite_store, self.vector_store, self.embedding, self.AI)
         self.retriever = MemoryRetriever(self.config, self.vector_store, self.sqlite_store, self.embedding)
         
@@ -114,9 +115,16 @@ class XMemoryLAS:
         try:
             with open(self.config.themes_path, 'r', encoding='utf-8') as f:
                 themes = json.load(f)
-            # themes embedding should be done here if empty, but for now we skip to avoid unnecessary API calls on every init if already done.
-            # Real implementation would check if vector store has themes.
-            # In Phase 1 we will just load it.
+            
+            # DB에 테마가 없는 경우에만 임베딩 후 삽입 (API 호출 비용 절약)
+            if self.vector_store.themes.count() == 0:
+                LAS_log.sys_log.info(f"테마 데이터베이스가 비어 있습니다. {len(themes)}개의 테마를 임베딩합니다...")
+                texts_to_embed = [t["name"] + ": " + t.get("summary", "") for t in themes]
+                embeddings = self.embedding.embed_batch(texts_to_embed)
+                self.vector_store.init_themes(themes, embeddings)
+            else:
+                LAS_log.sys_log.info(f"테마 데이터베이스 이미 존재: {self.vector_store.themes.count()}개")
+                
         except Exception as e:
             LAS_log.sys_log.error(f"테마 초기화 실패: {e}")
 
