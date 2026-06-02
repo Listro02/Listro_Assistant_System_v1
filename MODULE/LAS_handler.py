@@ -8,6 +8,17 @@ from MODULE.LAS import LAS
 # .env 파일에서 환경 변수를 로드합니다.
 load_dotenv()
 
+import sys
+from pathlib import Path
+
+# Add LAS_Memory_V2 to sys.path to allow importing XMemoryLAS
+project_root = Path(__file__).resolve().parent.parent
+sys.path.append(str(project_root / "LAS_Memory_V2"))
+from core.manager import XMemoryLAS
+
+# Instantiate XMemoryLAS globally
+xmemory_las = XMemoryLAS()
+
 class LAS_Handler:
     """
     별도의 스레드에서 LAS 대화 요청을 안전하게 처리하고,
@@ -19,16 +30,24 @@ class LAS_Handler:
             raise ValueError("환경 변수에서 'OPENAI_API_KEY'를 찾을 수 없습니다.")
         
         openai.api_key = self.api_key
+        self.use_xmemory = False
         
         # 여러 기능(AI, 음악 등)이 공유할 스레드 풀
         self.executor = concurrent.futures.ThreadPoolExecutor(max_workers=max_workers)
         print(f"공유 스레드 풀 (최대 {max_workers}개)을 사용하는 LAS_Handler가 초기화되었습니다.")
 
+    def set_xmemory_mode(self, use_xmemory: bool):
+        self.use_xmemory = use_xmemory
+
     def _blocking_api_call(self, prompt: str,name:str=None) -> str:
         """실제로 LAS를 호출하는 블로킹 함수 (백그라운드 스레드에서 실행됨)"""
         print(f"백그라운드 스레드에서 '{prompt[:20]}...'에 대한 응답 생성 중...")
         try:
-            result = LAS.process(content=prompt,talker=name)
+            if self.use_xmemory:
+                print(f"[XMemory_SYS] xMemory 모드로 응답을 생성합니다.")
+                result = xmemory_las.process(content=prompt, talker=name)
+            else:
+                result = LAS.process(content=prompt,talker=name)
             return result
         
         except Exception as e:

@@ -1,5 +1,7 @@
 # L.A.S. (Listro Assistant System)
 
+🇺🇸 [English README](README_en.md)
+
  본 프로젝트는 OpenAI API를 활용하여 상황 판단, 기억 관리, 대화 요약 등의 기능을 독립적인 에이전트 형태로 수행하는 AI 비서 L.A.S.를 개발한 프로젝트입니다. 주로 디스코드 환경에서 작동하도록 설계하였으며, GUI 환경을 제공합니다.
  
 단순한 챗봇을 넘어, 사용자의 과거 대화를 기억하고 현재 상황을 판단하여 적절한 도구(음악 재생 등)나 응답을 제공하는 구조를 가지고 있습니다.
@@ -48,3 +50,7 @@ Project/
 
  다음은 해당 작업의 결과 보고서입니다.
  - https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/edit?usp=sharing 
+
+ 또한, SQLite와 ChromaDB를 결합한 RAG 기반의 새로운 계층형 메모리 시스템 프로토타입은 아래 링크에서 확인할 수 있습니다.
+ - [**LAS_Memory_V2 (xMemory Project) README**](./LAS_Memory_V2/README.md)
+
