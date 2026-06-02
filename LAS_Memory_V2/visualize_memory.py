@@ -41,7 +41,7 @@ def main():
     print(f"[*] 에피소드(Episodes): {len(episodes_data['ids'])}개")
 
     # 그래프 생성
-    net = Network(height='800px', width='100%', bgcolor='#222222', font_color='white', directed=True)
+    net = Network(height='800px', width='100%', bgcolor='#f0f2f5', font_color='#212529', directed=True)
     # 물리 엔진 설정 (노드들이 예쁘게 퍼지도록)
     net.force_atlas_2based()
     
@@ -56,18 +56,18 @@ def main():
                 t_id = theme.get("id")
                 name = theme.get("name", t_id)
                 desc = theme.get("summary", "")
-                net.add_node(t_id, label=name, title=desc, color='#FF5733', size=40, shape='hexagon')
+                net.add_node(t_id, label=name, title=desc, color='#e8590c', size=40, shape='hexagon')
                 
     for t_id, meta in zip(themes_data['ids'], themes_data['metadatas']):
         if t_id not in net.get_nodes():
             name = meta.get("name", t_id)
             desc = meta.get("description", "")
-            net.add_node(t_id, label=name, title=desc, color='#FF5733', size=40, shape='hexagon')
+            net.add_node(t_id, label=name, title=desc, color='#e8590c', size=40, shape='hexagon')
 
     # 2. 에피소드 노드 추가 (하위/출처)
     for e_id, meta in zip(episodes_data['ids'], episodes_data['metadatas']):
         summary = meta.get("summary", "No Summary")
-        net.add_node(e_id, label=e_id, title=summary, color='#33FF57', size=15)
+        net.add_node(e_id, label=e_id, title=summary, color='#2f9e44', size=15)
 
     # 3. 팩트 노드 추가 및 연결
     for f_id, doc, meta in zip(facts_data['ids'], facts_data['documents'], facts_data['metadatas']):
@@ -76,7 +76,7 @@ def main():
         
         # 팩트 자체를 노드로
         label_text = doc[:15] + "..." if len(doc) > 15 else doc
-        net.add_node(f_id, label=label_text, title=doc, color='#33A1FF', size=25, shape='dot')
+        net.add_node(f_id, label=label_text, title=doc, color='#1c7ed6', size=25, shape='dot')
         
         # 팩트 -> 테마로 연결 (Belongs To)
         if theme_id and theme_id.strip():
