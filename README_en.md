@@ -45,12 +45,12 @@ Since this was created during my high school days when I did not know much about
 - Refactoring inter-module dependencies and hardcoded parts
 - Integration of additional features (in the form of plugins)
 
-## ✒️ Regarding partial feature improvements
-Before L.A.S. v2, the improvement of the memory system was temporarily implemented and verified in v1. This can be checked in Issue Tracking.
+## ✒️ Regarding Memory v2 Improvements
+Before L.A.S. v2, we temporarily implemented and verified the 'memory system' improvements within v1.
 
-Here is the report of the task:
+Here is the report of that work:
 - https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/edit?usp=sharing 
 
-Additionally, the prototype design and validation of the new RAG-based hierarchical memory system combining SQLite and ChromaDB can be found at the link below:
-- [**LAS_Memory_V2 (xMemory Project) README**](./LAS_Memory_V2/README_en.md)
+Additionally, the new RAG-based hierarchical memory system prototype combining SQLite and ChromaDB can be found at the link below:
+- [LAS_Memory_V2 (xMemory Project) README](./LAS_Memory_V2/README_en.md)
 

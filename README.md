@@ -45,12 +45,12 @@ Project/
 - 모듈간 의존성 및 하드코딩 부분 리팩토링
 - 추가 기능(플러그인 형태) 연동
 
-## ✒️ 일부 기능 개선과 관련하여
- L.A.S. v2 이전에 '메모리 시스템' 개선을 v1에 임시로 구현하여 검증하는 작업도 수행하였습니다. 이는 Issue Tracking에서 확인 가능합니다.
+## ✒️ 메모리v2 기능 개선과 관련하여
+ L.A.S. v2 이전에 '메모리 시스템' 개선을 v1에 임시로 구현하여 검증하는 작업도 수행하였습니다. 
 
  다음은 해당 작업의 결과 보고서입니다.
  - https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/edit?usp=sharing 
 
  또한, SQLite와 ChromaDB를 결합한 RAG 기반의 새로운 계층형 메모리 시스템 프로토타입은 아래 링크에서 확인할 수 있습니다.
- - [**LAS_Memory_V2 (xMemory Project) README**](./LAS_Memory_V2/README.md)
+ - [LAS_Memory_V2 (xMemory Project) README](./LAS_Memory_V2/README.md)
 

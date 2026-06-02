@@ -48,8 +48,22 @@ Please refer to the documents in the `docs` folder for detailed analysis and des
 
 ---
 
+## 📊 Memory Visualization (Knowledge Graph)
+
+Since the new memory system stores and layers memory in the form of metadata, we have converted the past conversation history into structured knowledge using the implemented system. The following is its visualization as a knowledge graph.
+
+- **`memory_graph.html`**: [View Knowledge Graph Visualization](https://listro02.github.io/Listro_Assistant_System_v1/LAS_Memory_V2/memory_graph.html)
+
+---
+
+## ⚙️ Getting Started
+- None.
+- This project fundamentally replaces the memory system of the L.A.S. v1 structure with xMemory. Therefore, the execution method is the same as L.A.S. v1. However, because the system contains many hardcoded parts, execution in external environments cannot be guaranteed.
+- In conclusion, if you wish to test xMemory, please contact the project manager (Listro).
+
+---
+
 ## 🚀 Conclusion
 
 - This was an independent attempt to implement the RAG-based hierarchical memory architecture prior to L.A.S. V2.
-- It is possible to test it by adding an xMemory activation button to the existing L.A.S. Kivy UI.
-- However, due to hardcoded parts in the existing system, it may be difficult for anyone other than the project developers to test it.
+- We have implemented an xMemory activation button in the existing L.A.S. Kivy UI so that users can interact based on the new memory architecture.
