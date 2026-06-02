@@ -48,7 +48,7 @@ Since this was created during my high school days when I did not know much about
 ## ✒️ Regarding Memory v2 Improvements
 Before L.A.S. v2, we temporarily implemented and verified the 'memory system' improvements within v1.
 
-Here is the report of that work and the materials for the new hierarchical memory system prototype:
-- **REPORT** : https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/
-- **README** : [LAS_Memory_V2 (xMemory Project)](./LAS_Memory_V2/README_en.md)
+The following are the result report of the work and materials on the new hierarchical memory system prototype:
+- **REPORT** : [L.A.S. Memory V2 (Result Report)](https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/)
+- **README** : [L.A.S. Memory V2 (xMemory Project)](./LAS_Memory_V2/README_en.md)
 
