@@ -117,17 +117,14 @@ class ConsolidationPipeline:
                     "status": status
                 })
         
-        # 4. 에피소드 임베딩 및 테마 매핑 (Phase 4)
+        # 4. 에피소드 임베딩 및 독립적 테마 매핑 (Phase 4)
         episode_text_to_embed = context_data["summary"] + " " + " ".join(context_data["topics"])
         episode_embedding = self.embedding.embed_text(episode_text_to_embed)
-        
-        matched_themes = self.vector.find_themes(episode_embedding, threshold=self.config.theme_threshold)
-        parent_theme_id = matched_themes[0] if matched_themes else ""
         
         episode = {
             "id": episode_id,
             "summary": context_data["summary"],
-            "parent_theme_id": parent_theme_id,
+            "parent_theme_id": "", # L3 -> L2 -> L1 아키텍처에 따라 에피소드 단위 강제 테마 할당 제거
             "target_range_start": start_turn,
             "target_range_end": end_turn,
             "topics": context_data["topics"],
@@ -143,7 +140,11 @@ class ConsolidationPipeline:
             embs_to_add = []
             for f in final_facts:
                 fact_dict = f.copy()
-                fact_dict["parent_theme_id"] = parent_theme_id # 상속
+                
+                # 각 사실 노드별로 독립적 테마 매핑 (L3 매핑)
+                fact_matched_themes = self.vector.find_themes(fact_dict["embedding"], threshold=self.config.theme_threshold)
+                fact_dict["parent_theme_id"] = fact_matched_themes[0] if fact_matched_themes else ""
+                
                 embs_to_add.append(fact_dict.pop("embedding"))
                 facts_to_add.append(fact_dict)
             self.vector.add_facts(facts_to_add, embs_to_add)

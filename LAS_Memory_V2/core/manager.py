@@ -172,11 +172,11 @@ class XMemoryLAS:
         
         if memory_context:
             if memory_context.get("facts"):
-                memory_injection["facts"] = [f["text"] for f in memory_context["facts"]]
+                memory_injection["facts"] = [f"[출처: {f.get('metadata', {}).get('source_episode_id', 'Unknown')}] {f['text']}" for f in memory_context["facts"]]
             if memory_context.get("episodes"):
-                memory_injection["episodes"] = [e["summary"] for e in memory_context["episodes"]]
+                memory_injection["episodes"] = [f"[{e['id']}] {e['summary']}" for e in memory_context["episodes"]]
             if memory_context.get("user_facts"):
-                user_memory_injection["facts"] = [f["text"] for f in memory_context["user_facts"]]
+                user_memory_injection["facts"] = [f"[출처: {f.get('metadata', {}).get('source_episode_id', 'Unknown')}] {f['text']}" for f in memory_context["user_facts"]]
 
         substitutions = {
             'REFERENCE': self.reference,

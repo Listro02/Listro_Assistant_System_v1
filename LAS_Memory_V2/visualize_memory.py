@@ -64,10 +64,16 @@ def main():
             desc = meta.get("description", "")
             net.add_node(t_id, label=name, title=desc, color='#FF5733', size=40, shape='hexagon')
 
+    # Add Unclassified node
+    net.add_node("T_Unclassified", label="미분류 (Unclassified)", title="테마 매핑 안됨", color='#A0A0A0', size=40, shape='hexagon')
+
+    import textwrap
+    
     # 2. 에피소드 노드 추가 (하위/출처)
-    for e_id, meta in zip(episodes_data['ids'], episodes_data['metadatas']):
-        summary = meta.get("summary", "No Summary")
-        net.add_node(e_id, label=e_id, title=summary, color='#33FF57', size=15)
+    for e_id, doc, meta in zip(episodes_data['ids'], episodes_data['documents'], episodes_data['metadatas']):
+        summary = doc if doc else "No Summary"
+        wrapped_summary = "\n".join(textwrap.wrap(summary, width=60))
+        net.add_node(e_id, label=e_id, title=wrapped_summary, color='#33FF57', size=15)
 
     # 3. 팩트 노드 추가 및 연결
     for f_id, doc, meta in zip(facts_data['ids'], facts_data['documents'], facts_data['metadatas']):
@@ -76,11 +82,14 @@ def main():
         
         # 팩트 자체를 노드로
         label_text = doc[:15] + "..." if len(doc) > 15 else doc
-        net.add_node(f_id, label=label_text, title=doc, color='#33A1FF', size=25, shape='dot')
+        wrapped_doc = "\n".join(textwrap.wrap(doc, width=60))
+        net.add_node(f_id, label=label_text, title=wrapped_doc, color='#33A1FF', size=25, shape='dot')
         
         # 팩트 -> 테마로 연결 (Belongs To)
         if theme_id and theme_id.strip():
             net.add_edge(f_id, theme_id, title="BELONGS_TO", color='#888888')
+        else:
+            net.add_edge(f_id, "T_Unclassified", title="BELONGS_TO", color='#A0A0A0')
             
         # 팩트 -> 에피소드로 연결 (Extracted From)
         if episode_id and episode_id.strip():
