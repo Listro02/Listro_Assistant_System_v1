@@ -1,0 +1,334 @@
+{
+  "benchmark_time": "2026-06-08T01:16:57.337341",
+  "test_cases": [
+    "T1_simple_greeting",
+    "T2_rag_required",
+    "T3_fact_query"
+  ],
+  "v1_results": [
+    {
+      "total_latency_s": 6.816,
+      "chat_api_calls": 5,
+      "embedding_api_calls": 0,
+      "total_api_calls": 5,
+      "chat_prompt_tokens": 6269,
+      "chat_completion_tokens": 323,
+      "total_chat_tokens": 6592,
+      "total_embedding_tokens": 0,
+      "total_tokens": 6592,
+      "phase4_triggered": false,
+      "calls_detail": {
+        "chat": [
+          {
+            "latency_s": 1.708,
+            "prompt_tokens": 828,
+            "completion_tokens": 5,
+            "total_tokens": 833,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 1.419,
+            "prompt_tokens": 689,
+            "completion_tokens": 7,
+            "total_tokens": 696,
+            "model": "gpt-4o-mini-2024-07-18",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 0.954,
+            "prompt_tokens": 2695,
+            "completion_tokens": 51,
+            "total_tokens": 2746,
+            "model": "gpt-4.1-mini-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 2.286,
+            "prompt_tokens": 1220,
+            "completion_tokens": 255,
+            "total_tokens": 1475,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 0.449,
+            "prompt_tokens": 837,
+            "completion_tokens": 5,
+            "total_tokens": 842,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          }
+        ],
+        "embedding": []
+      },
+      "wall_clock_s": 6.852,
+      "response_preview": "대기 중이며 주인님의 다음 명령을 기다리고 있습니다.",
+      "test_id": "T1_simple_greeting",
+      "test_label": "단순 인사/리액션",
+      "utterance": "야 뭐하냐"
+    },
+    {
+      "total_latency_s": 7.493,
+      "chat_api_calls": 5,
+      "embedding_api_calls": 0,
+      "total_api_calls": 5,
+      "chat_prompt_tokens": 6435,
+      "chat_completion_tokens": 817,
+      "total_chat_tokens": 7252,
+      "total_embedding_tokens": 0,
+      "total_tokens": 7252,
+      "phase4_triggered": false,
+      "calls_detail": {
+        "chat": [
+          {
+            "latency_s": 1.282,
+            "prompt_tokens": 841,
+            "completion_tokens": 142,
+            "total_tokens": 983,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 0.923,
+            "prompt_tokens": 732,
+            "completion_tokens": 7,
+            "total_tokens": 739,
+            "model": "gpt-4o-mini-2024-07-18",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 1.11,
+            "prompt_tokens": 2734,
+            "completion_tokens": 75,
+            "total_tokens": 2809,
+            "model": "gpt-4.1-mini-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 1.981,
+            "prompt_tokens": 1277,
+            "completion_tokens": 296,
+            "total_tokens": 1573,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 2.197,
+            "prompt_tokens": 851,
+            "completion_tokens": 297,
+            "total_tokens": 1148,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          }
+        ],
+        "embedding": []
+      },
+      "wall_clock_s": 7.546,
+      "response_preview": "처음 대화 내용은 상세히 기억하지 못하나, 주로 서비스 테스트와 역할 수행에 관한 대화를 주고받았습니다.",
+      "test_id": "T2_rag_required",
+      "test_label": "과거 정보 필요 (RAG)",
+      "utterance": "우리가 처음 만났을 때 무슨 대화를 나눴는지 기억나?"
+    },
+    {
+      "total_latency_s": 7.056,
+      "chat_api_calls": 5,
+      "embedding_api_calls": 0,
+      "total_api_calls": 5,
+      "chat_prompt_tokens": 6616,
+      "chat_completion_tokens": 671,
+      "total_chat_tokens": 7287,
+      "total_embedding_tokens": 0,
+      "total_tokens": 7287,
+      "phase4_triggered": false,
+      "calls_detail": {
+        "chat": [
+          {
+            "latency_s": 1.02,
+            "prompt_tokens": 837,
+            "completion_tokens": 143,
+            "total_tokens": 980,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 1.27,
+            "prompt_tokens": 768,
+            "completion_tokens": 7,
+            "total_tokens": 775,
+            "model": "gpt-4o-mini-2024-07-18",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 0.973,
+            "prompt_tokens": 2836,
+            "completion_tokens": 70,
+            "total_tokens": 2906,
+            "model": "gpt-4.1-mini-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 2.307,
+            "prompt_tokens": 1319,
+            "completion_tokens": 256,
+            "total_tokens": 1575,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 1.486,
+            "prompt_tokens": 856,
+            "completion_tokens": 195,
+            "total_tokens": 1051,
+            "model": "gpt-4.1-nano-2025-04-14",
+            "finish_reason": "stop"
+          }
+        ],
+        "embedding": []
+      },
+      "wall_clock_s": 7.105,
+      "response_preview": "당신은 Listro로, 저를 개발하는 취미를 가진 개발자이며 메모리 체계 개선과 마인크래프트에 관심이 있습니다.",
+      "test_id": "T3_fact_query",
+      "test_label": "구체적 사실 질문",
+      "utterance": "내가 누구인지, 뭘 하고 있는지 설명해봐"
+    }
+  ],
+  "v2_results": [
+    {
+      "total_latency_s": 1.77,
+      "chat_api_calls": 2,
+      "embedding_api_calls": 0,
+      "total_api_calls": 2,
+      "chat_prompt_tokens": 188,
+      "chat_completion_tokens": 44,
+      "total_chat_tokens": 232,
+      "total_embedding_tokens": 0,
+      "total_tokens": 232,
+      "phase4_triggered": false,
+      "calls_detail": {
+        "chat": [
+          {
+            "latency_s": 0.905,
+            "prompt_tokens": 97,
+            "completion_tokens": 12,
+            "total_tokens": 109,
+            "model": "gpt-4o-mini-2024-07-18",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 0.865,
+            "prompt_tokens": 91,
+            "completion_tokens": 32,
+            "total_tokens": 123,
+            "model": "gpt-4.1-mini-2025-04-14",
+            "finish_reason": "stop"
+          }
+        ],
+        "embedding": []
+      },
+      "wall_clock_s": 1.793,
+      "response_preview": "안녕하세요! \"Listro: 야 뭐하냐\"에 대해 도와드릴 내용이 있을까요? 무엇을 도와드릴까요?",
+      "test_id": "T1_simple_greeting",
+      "test_label": "단순 인사/리액션",
+      "utterance": "야 뭐하냐"
+    },
+    {
+      "total_latency_s": 4.865,
+      "chat_api_calls": 3,
+      "embedding_api_calls": 1,
+      "total_api_calls": 4,
+      "chat_prompt_tokens": 393,
+      "chat_completion_tokens": 72,
+      "total_chat_tokens": 465,
+      "total_embedding_tokens": 28,
+      "total_tokens": 493,
+      "phase4_triggered": true,
+      "calls_detail": {
+        "chat": [
+          {
+            "latency_s": 0.646,
+            "prompt_tokens": 111,
+            "completion_tokens": 7,
+            "total_tokens": 118,
+            "model": "gpt-4o-mini-2024-07-18",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 0.628,
+            "prompt_tokens": 155,
+            "completion_tokens": 16,
+            "total_tokens": 171,
+            "model": "gpt-4.1-mini-2025-04-14",
+            "finish_reason": "tool_calls"
+          },
+          {
+            "latency_s": 0.904,
+            "prompt_tokens": 127,
+            "completion_tokens": 49,
+            "total_tokens": 176,
+            "model": "gpt-4.1-mini-2025-04-14",
+            "finish_reason": "stop"
+          }
+        ],
+        "embedding": [
+          {
+            "latency_s": 2.687,
+            "prompt_tokens": 28,
+            "total_tokens": 28,
+            "model": "text-embedding-3-small"
+          }
+        ]
+      },
+      "wall_clock_s": 5.518,
+      "response_preview": "아쉽게도 \"Listro\"와 관련된 이전 대화 내용을 기억하거나 조회할 수 있는 기능이 없습니다. 처음 만났을 때 나눈 대화에 대해 구체적으로 말씀해 주시면 도와드리겠습니다!",
+      "test_id": "T2_rag_required",
+      "test_label": "과거 정보 필요 (RAG)",
+      "utterance": "우리가 처음 만났을 때 무슨 대화를 나눴는지 기억나?"
+    },
+    {
+      "total_latency_s": 2.227,
+      "chat_api_calls": 2,
+      "embedding_api_calls": 1,
+      "total_api_calls": 3,
+      "chat_prompt_tokens": 338,
+      "chat_completion_tokens": 61,
+      "total_chat_tokens": 399,
+      "total_embedding_tokens": 22,
+      "total_tokens": 421,
+      "phase4_triggered": false,
+      "calls_detail": {
+        "chat": [
+          {
+            "latency_s": 0.65,
+            "prompt_tokens": 106,
+            "completion_tokens": 7,
+            "total_tokens": 113,
+            "model": "gpt-4o-mini-2024-07-18",
+            "finish_reason": "stop"
+          },
+          {
+            "latency_s": 0.908,
+            "prompt_tokens": 232,
+            "completion_tokens": 54,
+            "total_tokens": 286,
+            "model": "gpt-4.1-mini-2025-04-14",
+            "finish_reason": "stop"
+          }
+        ],
+        "embedding": [
+          {
+            "latency_s": 0.669,
+            "prompt_tokens": 22,
+            "total_tokens": 22,
+            "model": "text-embedding-3-small"
+          }
+        ]
+      },
+      "wall_clock_s": 2.263,
+      "response_preview": "Listro: 현재까지의 대화 내용으로는 사용자가 누구인지, 어떤 일을 하고 있는지에 대한 정보가 제공되지 않았습니다. 더 자세한 정보를 알려주시면 정확하게 설명해 드릴 수 있습니...",
+      "test_id": "T3_fact_query",
+      "test_label": "구체적 사실 질문",
+      "utterance": "내가 누구인지, 뭘 하고 있는지 설명해봐"
+    }
+  ]
+}
