@@ -2,6 +2,9 @@
 
 🇺🇸 [English README](README_en.md)
 
+> 📄 **Notice**: 본 프로젝트를 진행한 결과는 논문 형식으로 문서화되어 보고서로 작성해두었습니다.
+> - **REPORT** : [대화형 AI 비서(L.A.S.)의 동적 RAG 메모리 아키텍처 설계](https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/) — *장기 기억 오염 방지 및 토큰 효율화를 위한 계층적 접근*
+
 ---
 
 ## 📖 개요 (Overview)
@@ -36,6 +39,8 @@
 ## 📂 문서 가이드 (Docs)
 
 자세한 분석 및 설계 명세는 `docs` 폴더 내의 문서들을 참고해 주세요.
+
+- **REPORT** : [대화형 AI 비서(L.A.S.)의 동적 RAG 메모리 아키텍처 설계](https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/) — *장기 기억 오염 방지 및 토큰 효율화를 위한 계층적 접근*
 
 * [**`LAS_memory_analysis.md`**](./docs/LAS_memory_analysis.md)
   * 기존 L.A.S. 기억 시스템의 정밀 분석 및 문제점(한계점) 도출 보고서

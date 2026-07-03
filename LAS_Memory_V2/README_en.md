@@ -2,6 +2,9 @@
 
 🇰🇷 [Korean README](README.md)
 
+> 📄 **Notice**: The research and implementation results of this project have been documented in an academic paper format as a comprehensive report.
+> - **REPORT** : [Design of a Dynamic RAG Memory Architecture for Conversational AI Assistants (L.A.S.)](https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/) — *A Hierarchical Approach to Preventing Long-Term Memory Poisoning and Optimizing Token Efficiency*
+
 ---
 
 ## 📖 Overview
@@ -36,6 +39,8 @@ The new xMemory architecture has the following characteristics:
 ## 📂 Docs Guide
 
 Please refer to the documents in the `docs` folder for detailed analysis and design specifications.
+
+- **REPORT** : [Design of a Dynamic RAG Memory Architecture for Conversational AI Assistants (L.A.S.)](https://docs.google.com/document/d/18ILmrwDFlmWfqEnGTj1-TT7385jOK3mhoyg0MUQDJ-E/) — *A Hierarchical Approach to Preventing Long-Term Memory Poisoning and Optimizing Token Efficiency*
 
 * [**`LAS_memory_analysis.md`**](./docs/LAS_memory_analysis.md)
   * In-depth analysis and limitation report of the existing L.A.S. memory system.
